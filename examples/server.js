@@ -26,7 +26,12 @@ router.get('/simple/get', async ctx => {
       msg: 'hello world'
     }
 });
-
+router.get('/base/get',async ctx => {
+  let ctx_query = ctx.query
+  ctx.body = {
+    ctx_query
+  }
+})
 app.use(router.routes())
 
 const port = process.env.PORT || 8888
